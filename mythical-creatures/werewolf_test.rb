@@ -20,8 +20,9 @@ class WerewolfTest < Minitest::Test
   end
 
   def test_it_can_change
+    # passes even if change isnt defined
     werewolf = Werewolf.new("David","London")
-    assert werewolf.respond_to?(:change)
+    assert werewolf.respond_to?(:change!)
   end
 
   def test_when_starting_as_a_human_changing_means_it_is_no_longer_human
@@ -33,6 +34,7 @@ class WerewolfTest < Minitest::Test
   def test_when_starting_as_a_human_changing_turns_it_into_a_werewolf
     werewolf = Werewolf.new("David","London")
     werewolf.change!
+
     assert werewolf.werewolf?
   end
 
