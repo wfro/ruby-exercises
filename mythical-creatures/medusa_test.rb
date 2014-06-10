@@ -44,4 +44,13 @@ class MedusaTest < Minitest::Test
     assert victim.stoned?
   end
 
+  def test_when_medusa_is_killed_all_statues_return_to_human
+    medusa = Medusa.new("Cassiopeia")
+    victim = Person.new("Perseus")
+
+    medusa.stare(victim)
+    medusa.off_with_her_head
+    assert_equal 0, medusa.statues.length
+    refute victim.stoned?
+  end
 end

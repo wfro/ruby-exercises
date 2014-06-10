@@ -1,5 +1,4 @@
 class Medusa
-
   attr_reader :name, :statues
 
   def initialize(name)
@@ -12,11 +11,15 @@ class Medusa
     victim.is_stone = true
   end
 
+  def off_with_her_head
+    
+  end
 end
 
-class Person
 
-  attr_accessor :name, :is_stone
+class Person
+  attr_reader :name
+  attr_accessor :is_stone
 
   def initialize(name)
     @name = name
@@ -26,5 +29,4 @@ class Person
   def stoned?
     @is_stone
   end
-
 end
